@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Card from './components/Card';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         >
           Learn React
         </a>
+        <Card rank="8" suit="spades" />
+        <Card rank="K" suit="diamonds" />
       </header>
     </div>
   );
