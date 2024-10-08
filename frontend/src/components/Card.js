@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 
     // CARD RANKS ARE CAPITALIZED 
     // A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K
@@ -7,7 +8,10 @@ import React from 'react'
     // heart, diamond, spade, club
 
 function Card({rank, suit}) {
-    
+    // cards are initially face down
+    const [upright, setUpright] = useState(false);
+
+
     // assign each suit to it's equivalent image (ex. 3 of diamonds = 4.4.png)
     switch(suit){
     case "heart":
@@ -26,9 +30,20 @@ function Card({rank, suit}) {
         suit = 2;
         break;
   }
+
+  // function to flip the card back and forth
+  const flipCard = () => {
+    setUpright(!upright);
+  };
+
   return (
-    <div>
-        <img src={`/sprites/cards/${rank}.${suit}.png`} alt={`Card rank:${rank} suit:${suit}`}></img>
+    <div onClick={flipCard}>
+        { // card is upright? show card, else show cardback
+          upright ? 
+          <img src={`/sprites/cards/${rank}.${suit}.png`} alt={`Card rank:${rank} suit:${suit}`}></img>
+          : <img src={`/sprites/cards/Back2.png`} alt={`Card facedown`}></img>
+        }
+
     </div>
   )
 }
