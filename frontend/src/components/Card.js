@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import "./Card.css";
 
     // CARD RANKS ARE CAPITALIZED 
     // A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K
@@ -27,7 +28,7 @@ function Card({rank, suit}) {
         suit = 7;
         break;
     default:
-        suit = 2;
+        throw new Error ("Suit is not a valid suitname, either invalid, pluralized, or capitalized. Please make sure suit name is singular and lowercase i.e. club, heart, diamond, spade.")
         break;
   }
 
@@ -37,7 +38,7 @@ function Card({rank, suit}) {
   };
 
   return (
-    <div onClick={flipCard}>
+    <div className={"card"} onClick={flipCard}>
         { // card is upright? show card, else show cardback
           upright ? 
           <img src={`/sprites/cards/${rank}.${suit}.png`} alt={`Card rank:${rank} suit:${suit}`}></img>
