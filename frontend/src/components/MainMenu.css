@@ -1,0 +1,33 @@
+.mainMenu {
+    background-color: rgb(13, 76, 13);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.mainMenu * {
+    padding: 0;
+    margin-block-start: 0;
+}
+
+.mainMenu a {
+    color: white;
+}
+
+.mainMenu small{
+    position: absolute;
+    bottom: 30px;
+}
+
+#btn_newGame {
+    padding: 20px;
+    font-size:x-large;
+    font-weight: bold;
+    height: 70px;
+    width: 200px;
+}
