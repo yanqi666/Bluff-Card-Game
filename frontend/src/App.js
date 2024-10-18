@@ -1,13 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Card from './components/Card';
-import Hand from './components/Hand';
-import Gameboard from './components/Gameboard';
+import Scene from './components/Scene';
 
 function App() {
   return (
     <div className="App">
-      <Gameboard />
+      <Scene />
     </div>
   );
 }
