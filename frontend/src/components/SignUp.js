@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import firebaseApp from '../firebase';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase';
+import "./SignUp.css"
 
 function SignUp() {
   const [email, setEmail] = useState('');
@@ -14,7 +14,7 @@ function SignUp() {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       console.log(userCredential);
     } catch (error) {
-      console.log(error.code);
+      console.log('Error logging in:', error.code);
     }
   };
 
@@ -33,40 +33,42 @@ function SignUp() {
 
 
   return (
-    <div className="ui segment grey signup-form">
-        <form className="ui form" onSubmit={signUpButtonPressed}>
-          <div className="ui stacked segment">
-            <div className="field">
-              <div className="ui left icon input">
-                <i className="mail icon"></i>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  id="email"
-                />
-              </div>
+    <div className='signup'>
+        <div className="ui segment grey signup-form">
+            <form className="ui form" onSubmit={signUpButtonPressed}>
+            <div className="ui stacked segment">
+                <div className="field">
+                <div className="ui left icon input">
+                    <i className="mail icon"></i>
+                    <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    id="email"
+                    />
+                </div>
+                </div>
+                <div className="field">
+                <div className="ui left icon input">
+                    <i className="lock icon"></i>
+                    <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    id="password"
+                    />
+                </div>
+                </div>
+                <button className="ui button green fluid" type="submit" id="signup-btn">CREATE ACCOUNT</button>
             </div>
-            <div className="field">
-              <div className="ui left icon input">
-                <i className="lock icon"></i>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  id="password"
-                />
-              </div>
+            </form>
+            <div className="ui message small">
+            Already have an account? <a href="#">Log In</a>
             </div>
-            <button className="ui button green fluid" type="submit" id="signup-btn">CREATE ACCOUNT</button>
-          </div>
-        </form>
-        <div className="ui message small">
-          Already have an account? <a href="#">Log In</a>
-        </div>
       </div>
+    </div>
   )
 }
 
