@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Gameboard from './Gameboard'
 import MainMenu from './MainMenu'
+import SignUp from './SignUp'
 
 
 function Scene() {
@@ -13,6 +14,8 @@ function Scene() {
             return <MainMenu changeScene={setCurrentScene} />;
         case 'game':
             return <Gameboard />;
+        case 'signup':
+            return <SignUp />
         default:
             return <MainMenu changeScene={setCurrentScene} />
     }
