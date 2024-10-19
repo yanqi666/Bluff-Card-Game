@@ -1,0 +1,17 @@
+.login {
+    background-color: green;
+    height: 100vh;
+    background-color: #ececec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    
+  .login-form {
+    min-width: 300px;
+    text-align: center;
+    width: 500px;
+  }
+  
+  
+  

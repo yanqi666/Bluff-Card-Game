@@ -1,27 +1,27 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase';
-import "./SignUp.css"
+import "./Login.css"
 
 function SignUp({ changeScene }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const signUpButtonPressed = async (e) => {
+  const loginButtonPressed = async (e) => {
     e.preventDefault();
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log(userCredential);
-      alert("User Creation Successful");
+      alert("Login Successful");
       changeScene("mainmenu");
     } catch (error) {
       console.log('Error logging in:', error.code);
     }
   };
 
-  const handleChangeToLogin = () => {
-    changeScene("login");
+  const handleChangeToSignUp = () => {
+    changeScene("signup")
   }
 
   useEffect(() => {
@@ -39,9 +39,9 @@ function SignUp({ changeScene }) {
 
 
   return (
-    <div className='signup'>
-        <div className="ui segment grey signup-form">
-            <form className="ui form" onSubmit={signUpButtonPressed}>
+    <div className='login'>
+        <div className="ui segment grey login-form">
+            <form className="ui form" onSubmit={loginButtonPressed}>
             <div className="ui stacked segment">
                 <div className="field">
                 <div className="ui left icon input">
@@ -67,11 +67,11 @@ function SignUp({ changeScene }) {
                     />
                 </div>
                 </div>
-                <button className="ui button green fluid" type="submit" id="signup-btn">CREATE ACCOUNT</button>
+                <button className="ui button green fluid" type="submit" id="login-btn">LOGIN</button>
             </div>
             </form>
             <div className="ui message small">
-            Already have an account? <button onClick={handleChangeToLogin}>Log In</button>
+            Need an account? <button onClick={handleChangeToSignUp}>Create one</button>
             </div>
       </div>
     </div>
