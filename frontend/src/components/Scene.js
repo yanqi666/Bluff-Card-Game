@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { onAuthStateChanged } from '@firebase/auth'
 import { auth } from '../firebase.js'
-import Gameboard from './Gameboard'
-import MainMenu from './MainMenu'
-import SignUp from './SignUp'
-import Login from './Login.js'
+import MainMenu from './mainmenu/MainMenu'
+import Gameboard from './gameboard/Gameboard'
+import SignUp from './signup/SignUp'
+import Login from './login/Login'
 
 
 function Scene() {
