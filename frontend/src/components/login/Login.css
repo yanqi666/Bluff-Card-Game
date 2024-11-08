@@ -1,7 +1,5 @@
 .login {
-    background-color: green;
-    height: 100vh;
-    background-color: #ececec;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +8,11 @@
   .login-form {
     min-width: 300px;
     text-align: center;
-    width: 500px;
+    width: 750px;
+    padding: 5%;
+    backdrop-filter: blur(8px); 
+    background-color: rgba(25, 135, 84, 0.2); 
+    border-radius: 20px; 
   }
   
   
