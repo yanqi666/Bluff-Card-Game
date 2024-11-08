@@ -11,7 +11,7 @@ body {
   }
   
   .navbar-brand {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif ;
     color: #fff;
     padding-left: 2%;
   }
@@ -21,8 +21,8 @@ body {
   }
   
   .bluff {
-    color: var(--color-secondary);
-    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-secondary) !important;
+    font-family: Arial, Helvetica, sans-serif !important;
   }
   
   .bg-blur {

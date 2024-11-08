@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./NavBar.css";
-import { Link,useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase.js";
 import { signOut } from '@firebase/auth';
@@ -20,6 +20,7 @@ const NavBar = () => {
     try {
       await signOut(auth);
       alert(`${user.email} Signed Out Successfully`)
+      window.location.href = "/";
     } catch (error) {
       console.error('Error signing out: ', error);
     }
@@ -29,13 +30,13 @@ const NavBar = () => {
       <div className="container-fluid d-flex justify-content-between m-0 w-100">
         {user? (
           <Link className="navbar-brand m-0" to="/scene">
-            <h1>
+            <h1 className="secondary-heading">
               <strong className="bluff secondary-heading">Bluff</strong>
             </h1>
           </Link>
         ) : (
         <Link className="navbar-brand m-0" to="/">
-          <h1>
+          <h1 className="m-0">
             <strong className="bluff secondary-heading">Bluff</strong>
           </h1>
         </Link>
@@ -66,7 +67,7 @@ const NavBar = () => {
             </ul>
           </div>
         ) : (
-          <div className="logins mb-2">
+          <div className="logins">
             <Link to="/signup">
               <button className="btn btn-outline-light me-2 px-3">Register</button>
             </Link>
