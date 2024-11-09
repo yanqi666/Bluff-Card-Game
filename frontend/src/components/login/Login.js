@@ -35,6 +35,12 @@ function Login( ) {
           </div>
           <div className="login-form col-md-8 col-lg-6 col-xl-4 offset-xl-1">
             <form onSubmit={loginButtonPressed}>
+            <div className="header">
+              <div className="text">
+                <h1 className="font-only-heading">WELCOME BACK</h1>
+              </div>
+              <div className="underline"></div>
+            </div>
 
               <div className="form-outline mb-4">
                 <input
