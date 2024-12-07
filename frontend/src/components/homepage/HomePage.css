@@ -1,0 +1,93 @@
+/* Color and heading fonts */
+:root {
+    --color-secondary: #fff;
+    --color-accent: #C0C0C0;
+  }
+  
+  body {
+    background-image: url(../img/Back2.jpeg) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+  }
+  
+  
+  .page-wrapper {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: calc(100vh - 10vh); 
+  }
+  
+  /* Headings with secondary color and font */
+  h1.secondary-heading,
+  h2.secondary-heading,
+  h3.secondary-heading {
+    color: var(--color-secondary);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Headings with just a different font */
+  h1.font-only-heading,
+  h2.font-only-heading,
+  h3.font-only-heading {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .block {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .block--dark {
+    color: #7b858b;
+  }
+  
+  .block__heading {
+    color: #fff;
+    font-weight: 700;
+  }
+  
+  .block__header {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Container inside the centered wrapper */
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center; /* Optional: center text */
+  }
+  
+  /* Hero Banner */
+  .hero__tagline {
+    font-size: 1.2rem;
+    color: #fff;
+    letter-spacing: 1px;
+    margin: 1rem 3rem 2rem;
+    font-family: Arial, Helvetica, sans-serif
+  }
+  
+  .hero-learn-btn-1, .hero-learn-btn-2 {
+    --bs-btn-padding-y: 0.5rem;
+    --bs-btn-padding-x: 5rem;
+    --bs-btn-font-size: 1rem;
+  }
+  
+  .hero-learn-btn-1 {
+    margin-right: 0.5rem;
+    --bs-btn-padding-x: 3rem;
+  }
+  .logo {
+    display: block; /* Ensures the logo is treated as a block-level element */
+    max-width: 750px; /* Adjust the width as necessary */
+    height: auto; /* Ensures the aspect ratio remains intact */
+    margin: 0 auto; /* Centers the logo horizontally */
+}
+  
